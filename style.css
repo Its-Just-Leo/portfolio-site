@@ -77,9 +77,10 @@ li {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     place-items: start;
+    gap: 10px;
 }
 
-#about p {
+#about div {
     grid-column: 1 / 5;
 }
 
@@ -89,6 +90,7 @@ li {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 /* Projects section */
@@ -138,6 +140,32 @@ li {
     opacity: 1;
 }
 
+/* Contact section */
+#contact{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+#contact div{
+    grid-column: 1 / 6;
+}
+
+#contact aside{
+    grid-column: 6 / -1;
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+#contact aside img{
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 300px;
+    width: auto;
+}
 /*  footer styling */
 footer{
     display: flex;
