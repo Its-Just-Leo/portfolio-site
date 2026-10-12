@@ -1,0 +1,145 @@
+body{
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+}
+
+body * {
+    box-sizing: border-box;
+}
+body a{
+    font-family: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+:root{
+    --grad-position: 50%;
+    --position-y: 50%;
+    --position-x: 50%;
+}
+
+@property --grad-position {
+    syntax: '<length>';
+    initial-value: 50%;
+    inherits: false;
+}
+
+/* Header */
+header{
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    padding-inline: 20px;
+    border-bottom: 1px solid #ffffff55; 
+    position: relative;
+    overflow: visible;
+}
+
+header ul{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+header ul li{
+    list-style-type: none;
+}
+
+header::before{
+    content: '';
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    background-position: var(--grad-position) center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 2px;
+}
+
+/* General styling */
+section{
+    padding-inline: 20px;
+    padding-block: 50px;
+}
+
+ul{
+    padding-inline-start: 0;
+}
+
+li {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+/* About section */
+#about{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    place-items: start;
+}
+
+#about p {
+    grid-column: 1 / 5;
+}
+
+#about img{
+    grid-column: 5 / -1;
+    grid-row: 1 / -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Projects section */
+#projects ul li::before{
+    content: "-";   
+    margin-inline-end: 10px;
+}
+
+/* Skills section */
+#skills ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#skills ul li{
+    padding: 10px 22px;
+    border-radius: 100px;
+    border: solid 1px #fff;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#skills ul li::after,
+#skills ul li::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+#skills ul li::after{
+    background: radial-gradient(100% 100%, transparent 35%, #fff 100%);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#skills ul li::before{
+    background: radial-gradient(25px 25px, #ffffff55 20%, transparent);
+    background-repeat: no-repeat;
+    background-position: var(--position-x) var(--position-y);
+    opacity: 0;
+}
+
+#skills ul li:hover::before{
+    opacity: 1;
+}
+
+/*  footer styling */
+footer{
+    display: flex;
+    justify-content: center;
+}
