@@ -93,7 +93,26 @@ li {
     border-radius: 10px;
 }
 
+@media only screen and (max-width:1000px) and (min-width:720px){
+    #about div{
+        grid-column: 1/4;
+    }
+    #about img{
+        grid-column: 4 / -1;
+    }
+}
+
+@media only screen and (max-width:720px) {
+    #about div, #about img{
+        grid-column: 1/-1;
+    }
+}
+
 /* Projects section */
+#projects ul li{
+    margin-bottom: 1.25rem;
+}
+
 #projects ul li::before{
     content: "-";   
     margin-inline-end: 10px;
@@ -104,9 +123,11 @@ li {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px;
 }
 
 #skills ul li{
+    flex: 200px 1 1;
     padding: 10px 22px;
     border-radius: 100px;
     border: solid 1px #fff;
